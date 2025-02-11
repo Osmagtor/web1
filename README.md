@@ -1,2 +1,2 @@
-# web1
-Proyecto FP DIW V1
+# Test website
+Just a simple school project that had to be made public. Feel free to ignore
