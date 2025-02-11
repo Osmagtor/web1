@@ -1,0 +1,80 @@
+@use 'all' as *;
+
+footer {
+
+    // Variables
+
+    $margin: 10px 20px;
+
+    // Styles
+
+    @include flex(column, center, center);
+
+    color: map-get($primary, 'white');
+    background-color: map-get($secondary, 'dark');
+
+    margin-top: $margin-top-footer;
+    padding: 20px;
+
+    .legal {
+        text-align: center;
+        font-size: 0.7em;
+
+        max-width: 800px;
+        margin: $margin;
+
+        .superscript {
+            font-variant: super;
+        }
+    }
+
+    hr {
+        @extend hr;
+
+        width: 500px;
+        height: 1px;
+
+        margin: $margin;
+
+        background-color: map-get($secondary, 'light');
+    }
+
+    .social {
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 10px;
+
+        width: 120px;
+
+        margin: $margin;
+
+        .social__item {
+            @extend li;
+            @include flex(column, center, center);
+
+            aspect-ratio: 1/1;
+            background-color: map-get($secondary, 'light');
+
+            .social__item__link {
+                @extend a;
+                @include flex(column, center, center);
+
+                filter: brightness(0) invert(1);
+
+                img {
+                    @include flex(column, center, center);
+                    text-align: center;
+
+                    width: 55%;
+                    font-size: 0.7em;
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin: $margin;
+    }
+}

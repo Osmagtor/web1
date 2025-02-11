@@ -1,0 +1,30 @@
+@use '../general/all.scss' as *;
+
+#chartjs-tooltip {
+	>div {
+		background-color: #cccccc;
+		/* backdrop-filter: blur(20px); */
+	
+		font-weight: bolder;
+	
+		border-radius: 10px;
+		width: fit-content;
+		padding: 15px;
+	
+		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+		>ul {
+			margin-top: 10px;
+			padding-left: 15px;
+		
+			font-weight: normal;
+
+			>li {
+				@extend li;
+
+				margin: 5px;
+				font-size: 0.8rem;
+			}
+		}
+	}
+}

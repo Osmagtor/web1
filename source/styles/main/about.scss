@@ -1,0 +1,91 @@
+@use '../general/all.scss' as *;
+@use '../general/header.scss';
+@use '../general/footer.scss';
+@use '../modules/loading.scss';
+
+// Styles
+
+main {
+
+    position: relative;
+    overflow: hidden;
+    min-height: 1000px;
+
+    background-color: map-get($secondary, 'dark');
+
+    .gallery {
+
+        @include flex(row, flex-start, center);
+
+        position: absolute;
+        left: 0px;
+    
+        height: 100%;
+    
+        .gallery__image {
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+
+            filter: blur(5px);
+    
+            transition: all 500ms;
+        }
+    }
+    
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        z-index: 1;
+
+        background-color: map-get($secondary, 'light');
+
+        padding: 20px;
+        border-radius: $border-radius;
+
+        box-shadow: map-get($shadow, 'strong');
+
+        width: 540px;
+
+        .text__heading {
+            font-size: map-get($headings, 'size');
+            font-family: map-get($headings, 'font');
+            font-weight: bolder;
+
+            color: map-get($primary, 'white');
+            margin: 20px !important;
+        }
+
+        .text__paragraph {
+            font-size: map-get($regular, 'size');
+            font-family: map-get($regular, 'font');
+
+            line-height: 1.5;
+
+            margin: 20px;
+
+            text-align: justify;
+
+            .text__paragraph__email {
+                font-family: map-get($headings, 'font');
+                color: map-get($primary, 'blue');
+                font-weight: bolder;
+
+                transition: all 500ms;
+
+                cursor: pointer;
+
+                &:hover {
+                    color: map-get($secondary, 'dark');
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 0px;
+}

@@ -1,0 +1,90 @@
+@use '../general/all.scss' as *;
+
+.sidebar__button {
+
+    @extend button;
+
+    width: fit-content;
+    aspect-ratio: 1/1;
+    padding: 5px;
+
+    border-radius: 20%;
+
+    position: absolute;
+    top: 12px;
+    
+    left: 12px;
+
+    border-color: transparent;
+    background-color: #e6e6e6;
+
+    display: none;
+    z-index: 2;
+
+    transition: all 500ms;
+
+    &:hover {
+        background-color: #9b9b9b;
+        cursor: pointer;
+
+        svg>line {
+            stroke: black;
+        }
+    }
+
+    &.crossed {
+        background-color: transparent;
+
+        &:hover {
+            background-color: map-get($secondary, 'dark');
+            cursor: pointer;
+    
+            svg>line {
+                stroke: map-get($primary, 'white');
+            }
+        }
+
+        svg>line {
+            stroke: map-get($primary, 'white');
+
+            &:first-of-type {
+                transform: rotate(-45deg) translate(0px, 0px);
+            }
+    
+            &:nth-of-type(2) {
+                opacity: 0;
+            }
+    
+            &:last-of-type {
+                transform: rotate(45deg) translate(0px, 0px);
+            }
+        }
+    }
+
+    svg>line {
+        stroke: black;
+        stroke-width: 3;
+        stroke-linecap: round;
+
+        transition: all 500ms;
+        transform-origin: center;
+
+        &:first-of-type {
+            transform: rotate(0deg) translate(0px, 7px);
+        }
+
+        &:nth-of-type(2) {
+            opacity: 1;
+        }
+
+        &:last-of-type {
+            transform: rotate(0deg) translate(0px, -7px);
+        }
+    }
+}
+
+@media only screen and (max-width: map-get($media-queries, 'smallest')) {
+    .sidebar__button {
+        display: flex;
+    }
+}

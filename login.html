@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FE Stats - Login</title>
+    <link rel="stylesheet" href="source/styles/main/login.css">
+    <link rel="shortcut icon" href="../img/interface/logo.png" type="image/png">
+    <script src="source/js/main/login.js" type="module"></script>
+</head>
+
+<body>
+    <div id="loading__screen">
+        <div id="loading__screen__circle">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <hr class="loading__screen__circle__support">
+            <div id="loading__screen__circle__nut"></div>
+            <div id="loading__screen__circle__rim"></div>
+            <div id="loading__screen__circle__engraving"></div>
+            <div id="loading__screen__circle__engraving2"></div>
+            <div id="loading__screen__circle__engraving3"></div>
+        </div>
+        <div id="loading__screen__text">
+            <p id="loading__screen__text__message">Preparing charts and statistics</p>
+            <p id="loading__screen__text__dots"></p>
+        </div>
+    </div>
+
+    <header>
+        <a class="logo" href="index.html">
+            <img src="../img/interface/logo.png" alt="Logo">
+            <div>
+                <h1>FE Stats</h1>
+                <h2>All Formula E Statistics</h2>
+            </div>
+        </a>
+
+        <nav class="nav">
+            <a href="#" class="nav__link-selected">
+                <span>Drivers</span>
+            </a>
+            <a href="#" class="nav__link">
+                <span>Teams</span>
+            </a>
+            <a href="#" class="nav__link">
+                <span>Tracks</span>
+            </a>
+            <a href="#" class="nav__link">
+                <span>Rounds</span>
+            </a>
+            <a href="#" class="nav__link">
+                <span>Seasons</span>
+            </a>
+            <a href="about.html" class="nav__link">
+                <span>About</span>
+            </a>
+        </nav>
+
+        <section class="user">
+            <article class="user__lang">
+                <div>
+                    <a href="#" class="user__lang__option">
+                        <img src="../img/flags/4x3/724.svg" alt="Flag of Spain">
+                        <h3>Español</h3>
+                    </a>
+                    <a href="#" class="user__lang__option-selected">
+                        <img src="../img/flags/4x3/826.svg" alt="Flag of the United Kingdom">
+                        <h3>English</h3>
+                    </a>
+                    <a href="#" class="user__lang__option">
+                        <img src="../img/flags/4x3/620.svg" alt="Flag of Portugal">
+                        <h3>Português</h3>
+                    </a>
+                    <a href="#" class="user__lang__option">
+                        <img src="../img/flags/4x3/250.svg" alt="Flag of France">
+                        <h3>Français</h3>
+                    </a>
+                    <a href="#" class="user__lang__option">
+                        <img src="../img/flags/4x3/276.svg" alt="Flag of Germany">
+                        <h3>Deutsch</h3>
+                    </a>
+                    <a href="#" class="user__lang__option">
+                        <img src="../img/flags/4x3/528.svg" alt="Flag of the Netherlands">
+                        <h3>Nederlands</h3>
+                    </a>
+                </div>
+            </article>
+            <a class="user__login" href="login.html">
+                <img src="../img/interface/user.svg" alt="User Image">
+                <button>Login</button>
+            </a>
+        </section>
+    </header>
+
+    <main>
+        <section class="login">
+            <form class="login__box">
+                <h1 class="login__box__heading">Login</h1>
+                <div>
+                    <label for="login__box__email">Email</label>
+                    <input type="email" id="login__box__email" name="email" placeholder="Email">
+                </div>
+                <div>
+                    <label for="login__box__password">Password</label>
+                    <input type="password" id="login__box__password" name="password" placeholder="Password">
+
+                    <button class="login__box__show-password"></button>
+                </div>
+                <button class="login__box__button" type="submit">Log in</button>
+                <a href="#" class="login__box__restore">
+                    <h2 class="login__box__restore__heading">Can't remember your password?</h2>
+                    <p class="login__box__restore__paragraph">By continuing, you agree to FE STATS's limited Terms of
+                        Use of Service and Cookie Policy</p>
+                </a>
+                <a href="#" class="login__box__signup">
+                    <h2 class="login__box__signup__heading">Don't have an account?</h2>
+                    <p class="login__box__signup__paragraph">Sign up to take advantage of the MySQL database behind the
+                        website to obtain the data that YOU want</p>
+                    <button class="login__box__signup__button">Sign up</button>
+                </a>
+            </form>
+            <form class="login__box">
+                <h1 class="login__box__heading">Sign up</h1>
+                <div>
+                    <label for="signup__box__name">Name</label>
+                    <input type="text" id="signup__box__name" name="name" placeholder="Name">
+                </div>
+                <div>
+                    <label for="signup__box__surname">Surname</label>
+                    <input type="text" id="signup__box__surname" name="surname" placeholder="Surname">
+                </div>
+                <div>
+                    <label for="signup__box__birthdate">Date of birth</label>
+                    <input type="date" id="signup__box__birthdate" name="date">
+                </div>
+                <div>
+                    <label for="signup__box__email">Email</label>
+                    <input type="text" id="signup__box__email" name="email" placeholder="Email">
+                </div>
+                <div>
+                    <label for="signup__box__password">Password</label>
+                    <input type="password" id="signup__box__password" name="password" placeholder="Password">
+
+                    <button class="login__box__show-password"></button>
+                </div>
+                <div>
+                    <label for="signup__box__password2">Confirm password</label>
+                    <input type="password" id="signup__box__password2" name="password2" placeholder="Confirm password">
+
+                    <button class="login__box__show-password"></button>
+                </div>
+                <button class="login__box__button" type="submit">Sign up</button>
+                <a href="#" class="login__box__signup">
+                    <h2 class="login__box__signup__heading">Already have an account?</h2>
+                    <p class="login__box__signup__paragraph">Then wait no longer. Log in and start obtaining the data
+                        that YOU want from the database behind the website</p>
+                    <button class="login__box__signup__button">Login</button>
+                </a>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p class="legal">FE Stats is an unofficial website and is in no way associated with the companies involved in
+            Formula E. FE, FORMULA E, FIA FORMULA E CHAMPIONSHIP, ePRIX and any other brands are trademarks of Formula
+            E. FE Stats is a non-profit fan-made website.</p>
+        <p class="legal">All products, logos, signatures, corporate names or other brands or images used within the
+            website are registered trademarks<span class="superscript">™®</span> of their respective owners. Its use
+            does not imply affiliation or authorization of any of them.</p>
+        <hr>
+        <ul class="social">
+            <li class="social__item">
+                <a href="#" class="social__item__link">
+                    <img src="../img/interface/blueksy.svg" alt="BlueSky Logo">
+                </a>
+            </li>
+            <li class="social__item">
+                <a href="#" class="social__item__link">
+                    <img src="../img/interface/linkedin.svg" alt="Linkedin Logo">
+                </a>
+            </li>
+            <li class="social__item">
+                <a href="#" class="social__item__link">
+                    <img src="../img/interface/discord.svg" alt="Discord Logo">
+                </a>
+            </li>
+        </ul>
+        <h3>&copy; Óscar Maganto Torres &lpar;Est. 2025&rpar;</h3>
+    </footer>
+</body>
+
+</html>

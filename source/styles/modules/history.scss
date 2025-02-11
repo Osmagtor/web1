@@ -1,0 +1,40 @@
+@use '../general/all.scss' as *;
+
+.historyBox__item {
+    @include flex(column, flex-start, center);
+
+    padding: 5px;
+    text-decoration: none;
+
+    >* {
+        text-align: center;
+        margin: 5px 0px;
+    }
+
+    .historyBox__item__img {
+        max-width: 80px;
+    }
+    
+    .historyBox__item__season {
+        font-weight: bolder;
+        font-size: 0.8em;
+    }
+    
+    .historyBox__item__team {
+        font-size: 0.7em;
+    }
+
+    &-first {
+        @extend .historyBox__item;
+
+        border-top-left-radius: $border-radius;
+        border-bottom-left-radius: $border-radius;
+    }
+
+    &-last {
+        @extend .historyBox__item;
+
+        border-top-right-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+    }
+}

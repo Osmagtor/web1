@@ -1,0 +1,62 @@
+@use '../general/all.scss' as *;
+
+.selectBox {
+    cursor: pointer;
+
+    @include flex(column, center, center);
+    display: inline-flex;
+
+    >.selectSubBox {
+        @include flex(column, flex-start, center);
+
+        width: 100%;
+
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+
+        box-shadow: map-get($shadow, 'neutral');
+        max-height: 16rem;
+        overflow-y: scroll;
+
+        >div>span:hover {
+            background-color: #cfcfcf;
+            border-radius: calc($border-radius/2);
+        }
+
+        >div.selected__item>span {
+            background-color: #bdbdbd;
+            border-radius: calc($border-radius/2);
+        }
+    }
+
+    div:not(.selectSubBox) {
+        background-color: #e9e9ed;
+        padding: 3px;
+        font-size: 0.8rem;
+
+        position: relative;
+
+        @include flex(row, flex-start, center);
+
+        &:first-of-type {
+            border-top-left-radius: calc($border-radius/2);
+            border-top-right-radius: calc($border-radius/2);
+        }
+
+        >span {
+            padding: 5px;
+            width: 100%;
+
+            display: flex;
+        }
+    }
+
+    .help {
+        right: 17px;
+    }
+
+    >div {
+        border-radius: calc($border-radius/2);
+    }
+}

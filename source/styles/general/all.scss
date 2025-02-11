@@ -1,0 +1,129 @@
+/* EXTERNAL */
+
+/* Modern Normalize CSS */
+/* https://github.com/sindresorhus/modern-normalize */
+
+@import url(https://necolas.github.io/normalize.css/8.0.1/normalize.css);
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(../../../fonts/Montserrat-Bold.ttf);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: ChakraPetch;
+    src: url(../../../fonts/ChakraPetch-Regular.ttf);
+}
+
+@font-face {
+    font-family: ChakraPetch;
+    src: url(../../../fonts/ChakraPetch-Bold.ttf);
+    font-weight: bold;
+}
+
+// Variables
+
+$headings: (
+    'font': 'ChakraPetch',
+    'size': 2em,
+);
+
+$regular: (
+    'font': 'Montserrat',
+    'size': 1em,
+);
+
+$primary: (
+    'blue': #358aa2,
+    'white': #ffffff,
+);
+
+$secondary: (
+    'light': #97BFC9,
+    'dark': #143640,
+);
+
+$shadow: (
+    'light': 0 4px 6px rgba(0, 0, 0, 0.1),
+    'neutral': 0 4px 6px rgba(0, 0, 0, 0.2),
+    'strong': 0 4px 6px rgba(0, 0, 0, 0.3)
+);
+
+$margin-top-footer: 120px;
+
+$border-radius: 10px;
+
+$media-queries: (
+    'smallest': 1079px,
+);
+
+// Mixins
+
+@mixin flex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Global styles
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+
+    font-family: map-get($regular, 'font');
+    font-size: map-get($regular, 'size');
+
+    h1 {
+        margin: 0px !important; // To override the styles from normalize.css
+    }
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    min-height: 100vh;
+}
+
+button {
+    border: none;
+    border-radius: $border-radius;
+
+    font-weight: bolder;
+
+    padding: 10px;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    border-radius: $border-radius;
+
+    font-weight: bolder;
+
+    padding: 10px;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+hr {
+    border-radius: $border-radius;
+    border-color: transparent;
+}

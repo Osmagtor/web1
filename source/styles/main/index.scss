@@ -1,0 +1,119 @@
+@use '../general/all.scss' as *;
+@use '../general/header.scss';
+@use '../general/footer.scss';
+@use '../modules/loading.scss';
+
+main {
+
+    @include flex(column, flex-start, center);
+
+    width: 100%;
+
+    .block {
+
+        // Styles
+
+        @include flex(column, center, flex-start);
+        padding: 20px 0px;
+        margin: 20px 0px;
+        width: 100%;
+
+        * {
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .block__heading {
+            font-family: map-get($headings, 'font');
+            font-size: map-get($headings, 'size');
+            margin: 10px auto;
+        }
+
+        hr {
+            @extend hr;
+
+            height: 1px;
+            margin: 10px auto;
+        }
+
+        .block__content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 20px;
+
+            margin: 10px auto;
+
+            .block__text {
+                @include flex(column, flex-start, center);
+
+                .block__text__subheading {
+                    font-size: 1.25em;
+                    font-weight: bolder;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .block__images {
+                display: grid;
+                grid-template-columns: 2fr 1fr 2fr;
+                gap: 40px;
+
+                img {
+                    @include flex(column, center, center);
+                    text-align: center;
+                    aspect-ratio: 1/1;
+                    height: 100%;
+                }
+
+                .block__images__group {
+                    display: grid;
+                    grid-template-rows: 1fr 1fr;
+                    gap: 10px;
+
+                    img {
+                        @include flex(column, center, center);
+                        text-align: center;
+                        aspect-ratio: 1/1;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+
+        &:nth-child(odd) {
+
+            direction: ltr;
+
+            color: map-get($primary, 'blue');
+            background-color: map-get($primary, 'white');
+
+            hr {
+                background-color: map-get($primary, 'blue');
+            }
+        }
+
+        &:nth-child(even) {
+
+            direction: rtl;            
+
+            color: map-get($primary, 'white');
+            background-color: map-get($secondary, 'light');
+
+            hr {
+                background-color: map-get($primary, 'white');
+            }
+
+            .block__images {
+                img[alt="Placeholder Image"] {
+                    filter: brightness(0) invert(1);
+
+                    .block__images__group {
+                        img[alt="Placeholder Image"] {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+.help {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    width: 17px;
+    aspect-ratio: 1/1;
+
+    font-size: 0.7em;
+    font-weight: bolder;
+    color: gray;
+    border: solid 2px gray;
+    border-radius: 50%;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    pointer-events: all !important;
+    cursor: help;
+}

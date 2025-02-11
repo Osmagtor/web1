@@ -1,0 +1,197 @@
+@use '../general/all.scss' as *;
+@use '../general/header.scss';
+@use '../general/footer.scss';
+@use '../modules/loading.scss';
+
+// Styles
+
+main {
+
+    position: relative;
+    overflow: hidden;
+    min-height: 1200px;
+
+    .login {
+
+        @include flex(row, flex-start, flex-start);
+
+        position: absolute;
+        height: 100%;
+
+        .login__box {
+            @include flex(column, center, center);
+
+            $width: 380px;
+            width: $width;
+
+            border-radius: $border-radius;
+            background-color: map-get($secondary, 'light');
+
+            box-shadow: map-get($shadow, 'strong');
+
+            padding: 20px 40px;
+            margin: 40px calc(50vw - #{$width} / 2);
+
+            transition: all 500ms;
+
+            * {
+                margin: 10px 0;
+            }
+
+            .login__box__heading {
+                font-size: map-get($headings, 'size');
+                font-family: map-get($headings, 'font');
+                font-weight: bolder;
+                color: map-get($primary, 'white');
+
+                margin-bottom: 20px !important;
+            }
+
+            div {
+                position: relative;
+
+                label {
+                    width: 100%;
+                    font-size: 0.8em;
+                    font-family: map-get($regular, 'font');
+                    color: map-get($primary, 'white');
+
+                    margin-bottom: 0px;
+                }
+
+                .login__box__show-password {
+
+                    position: absolute;
+                    right: 5px;
+                    top: 33px;
+
+                    width: 30px;
+                    height: 30px;
+
+                    margin: 0px;
+
+                    /* https://stackoverflow.com/questions/7775594/css-list-style-image-size */
+
+                    background-image: url(../../../img/interface/eye-off.svg);
+                    background-color: map-get($primary, 'white');
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 22px;
+                }
+
+                .just-validate-error-label {
+                    font-size: 0.8em;
+                    margin: 0px;
+                }
+
+                input {
+                    @extend input;
+
+                    background-color: map-get($primary, 'white');
+
+                    width: 100%;
+
+                    &[type='date'] {
+                        text-align: center;
+                    }
+
+                    &:hover {
+                        color: map-get($secondary, 'dark');
+                        cursor: text;
+                    }
+
+                    &:focus {
+                        color: map-get($secondary, 'dark');
+                        border-color: map-get($primary, 'blue');
+                    }
+                }
+            }
+
+            .login__box__button {
+                @extend button;
+
+                background-color: map-get($primary, 'blue');
+                color: map-get($primary, 'white');
+
+                transition: all 500ms;
+
+                &:hover {
+                    background-color: map-get($secondary, 'dark');
+                    box-shadow: map-get($shadow, 'strong');
+                }
+            }
+
+            .login__box__restore {
+
+                font-family: map-get($regular, 'font');
+                color: map-get($primary, 'white');
+
+                margin-top: 20px;
+
+                .login__box__restore__heading {
+                    font-size: 1em;
+
+                    margin: 0px;
+                    padding: 10px 0px;
+
+                    text-decoration: none;
+                    color: black;
+
+                    /* https://stackoverflow.com/questions/7775594/css-list-style-image-size */
+
+                    background-image: url(../../../img/interface/external.svg);
+                    background-repeat: no-repeat;
+                    background-position: right center;
+                    background-size: 22px;
+                    list-style: none;
+
+                    filter: invert(1);
+                }
+
+                .login__box__restore__paragraph {
+                    font-size: 0.7em;
+                    text-align: justify;
+                }
+            }
+
+            .login__box__signup {
+
+                @include flex(column, center, center);
+
+                color: map-get($primary, 'white');
+
+                .login__box__signup__heading {
+                    font-family: map-get($headings, 'font');
+                    font-weight: bolder;
+                    font-size: 1.25em;
+                    color: map-get($primary, 'white');
+
+                    width: 100%;
+                }
+
+                .login__box__signup__paragraph {
+                    font-size: 0.8em;
+                    text-align: justify;
+                }
+
+                .login__box__signup__button {
+                    @extend button;
+
+                    background-color: map-get($primary, 'blue');
+                    color: map-get($primary, 'white');
+
+                    transition: all 500ms;
+
+                    &:hover {
+                        background-color: map-get($secondary, 'dark');
+                        box-shadow: map-get($shadow, 'strong');
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 0px;
+}

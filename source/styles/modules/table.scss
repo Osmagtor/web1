@@ -1,0 +1,188 @@
+@use '../general/all.scss' as *;
+
+.table {
+    margin: 10px;
+    background-color: #9B9B9E;
+    gap: 1px;
+
+    >div {
+        position: relative;
+        background-color: white;
+        text-align: center;
+
+        @include flex(row, center, center);
+
+        padding: 5px;
+
+        &:not(.pagination) a {
+            text-decoration: none;
+            color: inherit;
+
+            /* https://stackoverflow.com/questions/7775594/css-list-style-image-size */
+
+            background-image: url(../../../img/interface/external.svg);
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 14px;
+            padding-right: 18px;
+            list-style: none;
+        }
+
+        &.alternative {
+            background-color: #dfdfdf;
+        }
+
+        >input {
+            /* It doesn't affect checkboxes */
+
+            background-color: transparent;
+            border: none;
+
+            text-align: center;
+
+            width: 100%;
+
+            &:focus {
+                outline: none;
+
+                font-style: italic;
+                color: rgb(158, 22, 22);
+            }
+
+            &.modified {
+                color: green;
+                font-weight: bolder;
+            }
+
+            /* https://stackoverflow.com/questions/6456149/html5-how-to-force-input-pattern-validation-on-value-change */
+            &[pattern]:invalid {
+                color: rgb(158, 22, 22);
+                text-decoration: line-through;
+            }
+        }
+
+        &.pagination {
+            a {
+                text-decoration: none;
+                font-weight: bolder;
+                color: black;
+
+                @include flex(row, center, center);
+
+                transition: all 200ms;
+
+                &.selected {
+                    color: #358aa2;
+                    font-size: 2em;
+                }
+
+                &:not(.selected):hover {
+                    color: #3b5e68;
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+
+    .header {
+        font-weight: bolder;
+
+        &:after {
+            content: '▲';
+            margin-left: 5px;
+        }
+
+        &.sorted:after {
+            content: '▼';
+            margin-left: 5px;
+        }
+    }
+}
+
+
+/* This rule refers to .listTable div elements created as part of the JS ListTableClassification class */
+
+.listTable {
+
+    &.classification {
+        font-size: 0.72em;
+
+        img {
+            max-width: 70px;
+            max-height: 22px;
+            padding: 1.5px;
+        }
+
+        .classification__position {
+            /* background-color: red; */
+            height: 100%;
+
+            display: grid;
+            grid-template-columns: 40% 60%;
+
+            border-radius: calc($border-radius/2);
+            padding: 5px;
+            min-width: 70px;
+
+            >* {
+                padding: 5px;
+                font-weight: bolder;
+            }
+
+            >span:last-of-type {
+                @include flex(row, center, flex-start);
+            }
+        }
+
+        .classification__time.fastest {
+            color: #9111b5;
+        }
+    }
+
+    >.table {
+        gap: 0px;
+        background-color: transparent;
+
+        >div:has(a>div.classification__position) {
+            @include flex(row, flex-start, flex-start);
+        }
+
+        >div {
+            background-color: #e6e6e6;
+
+            &.alternative {
+                background-color: #c8c8c8;
+            }
+        }
+
+        a {
+            &.fastest {
+                background-image: url(../../../img/interface/fastest.svg);
+                background-size: 27px;
+                padding-right: 30px;
+            }
+
+            &.fanboost {
+                background-image: url(../../../img/interface/fanboost.svg);
+                background-size: 27px;
+                padding-right: 30px;
+            }
+
+            &.fastest.fanboost {
+                background-image: url(../../../img/interface/fastest-fanboost.svg);
+                background-size: 53px;
+                padding-right: 57px;
+            }
+        }
+
+        .gained {
+            color: #27bf4d;
+            font-weight: bolder;
+        }
+
+        .lost {
+            color: #d42f2f;
+            font-weight: bolder;
+        }
+    }
+}

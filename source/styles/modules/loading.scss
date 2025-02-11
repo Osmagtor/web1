@@ -1,0 +1,178 @@
+@use '../general/all.scss' as *;
+
+
+#loading__screen {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: white;
+    z-index: 1000;
+
+    @include flex(column, center, center);
+
+    font-size: 1.25em;
+
+    #loading__screen__circle {
+        width: 200px;
+        height: 200px;
+    
+        border-radius: 50%;
+        border: 30px solid #1f1f1f;
+    
+        @include flex(row, center, center);
+    
+        position: relative;
+    
+        animation-name: rotating;
+        animation-duration: 700ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        #loading__screen__circle__nut {
+            width: 35px;
+            height: 35px;
+        
+            background-color: #bbaa91;
+            border-radius: 50%;
+            border: 6px solid #b8313e;
+        
+            z-index: 0;
+        }
+        
+        #loading__screen__circle__rim {
+            width: 145px;
+            height: 145px;
+        
+            border-radius: 50%;
+            border: 10px solid #444;
+        
+            position: absolute;
+        
+            z-index: -1;
+        }
+
+        .loading__screen__circle__support {
+            width: 50%;
+            height: 9px;
+        
+            position: absolute;
+            left: 0px;
+        
+            background: linear-gradient(to bottom right, #444, black);
+            border-color: #444;
+        
+            z-index: -1;
+
+            &:nth-child(1) {
+                transform: rotate(90deg) translate(-40px, -35px);
+            }
+            
+            &:nth-child(2) {
+                transform: rotate(141deg) translate(-68px, -22px);
+            }
+            
+            &:nth-child(3) {
+                transform: rotate(192deg) translate(-76px, 7px);
+            }
+            
+            &:nth-child(4) {
+                transform: rotate(243deg) translate(-59px, 30px);
+            }
+            
+            &:nth-child(5) {
+                transform: rotate(294deg) translate(-29px, 31px);
+            }
+            
+            &:nth-child(6) {
+                transform: rotate(345deg) translate(-12px, 9px);
+            }
+            
+            &:nth-child(7) {
+                transform: rotate(396deg) translate(-15px, -20px);
+            }
+        }
+
+        #loading__screen__circle__engraving {
+            position: absolute;
+        
+            width: 181px;
+            height: 181px;
+        
+            border-radius: 50%;
+            border: solid 10px #0378e7;
+            border-top-color: transparent;
+            border-bottom-color: transparent;
+        }
+        
+        #loading__screen__circle__engraving2 {
+            position: absolute;
+            width: 181px;
+            height: 181px;
+        
+            border-radius: 50%;
+            border: dotted 2px yellow;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+        
+        #loading__screen__circle__engraving3 {
+            position: absolute;
+            width: 169px;
+            height: 169px;
+        
+            border-radius: 50%;
+            border: dashed 2px white;
+            border-right-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+
+    #loading__screen__text {
+        margin-top: 50px;
+        width: 322px;
+
+        @include flex(row, flex-start, center);
+
+        #loading__screen__text__dots::after {
+            content: '...';
+        
+            animation-name: dots;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+        }
+    }
+}
+
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dots {
+    0% {
+        content: '';
+    }
+
+    25% {
+        content: '.';
+    }
+
+    50% {
+        content: '..';
+    }
+
+    75% {
+        content: '...';
+    }
+}
